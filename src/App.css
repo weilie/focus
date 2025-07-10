@@ -1,5 +1,6 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: sans-serif;
   background: #111;
   color: white;
   display: flex;
@@ -9,12 +10,28 @@
   height: 100vh;
 }
 
+.App {
+  text-align: center;
+  background: #111;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw; /* Ensure App takes full width */
+  position: relative; /* For absolute positioning of children */
+}
+
 .scene {
-  position: relative;
+  position: fixed; /* Use fixed to cover the entire viewport */
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   /* background: url('/assets/background.jpg') center/cover no-repeat; */
   background-color: #282c34;
+  z-index: -1; /* Place behind other content */
 }
 
 .avatar {
@@ -35,8 +52,74 @@
   color: white;
 }
 
+.current-time-clock {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.timer-setup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.timer-setup input {
+  width: 80px;
+  padding: 8px;
+  font-size: 1.2rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
 button {
   padding: 10px 20px;
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.dialog-box {
+  background-color: #333;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.dialog-box p {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.dialog-buttons button {
+  margin: 0 10px;
+  padding: 12px 25px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.dialog-buttons button:hover {
+  background-color: #0056b3;
 }
