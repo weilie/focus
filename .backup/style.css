@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #111;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#app {
+  text-align: center;
+}
+
+#scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url('assets/background.jpg') center/cover no-repeat;
+}
+
+#avatar {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 150px;
+}
+
+#clock {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+utton {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
